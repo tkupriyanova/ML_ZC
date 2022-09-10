@@ -1,0 +1,13 @@
+import numpy as np
+import pandas as pd
+
+np.__version__
+
+!wget https://raw.githubusercontent.com/alexeygrigorev/mlbookcamp-code/master/chapter-02-car-price/data.csv -O hw-1.csv
+
+df = pd.read_csv('hw-1.csv')
+
+df.groupby('Make').count().sort_values(by='Model', ascending=False)
+
+df[df.Make == 'Audi'].nunique()
+
